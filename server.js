@@ -12,7 +12,6 @@ app.use(cors());
 app.use('/', routes);
 
 
-const PORT=process.env.PORT || 8000;
 
 
 mongoose
@@ -21,8 +20,6 @@ mongoose
 .catch((err)=>console.log("Mongodb error:", err))
 
 
-
-
-app.listen(PORT, ()=>{
-console.log(`Server running on port ${PORT}`);
-})
+app.listen(process.env.PORT || 8000, "0.0.0.0", () => {
+  console.log(`Server running on port ${process.env.PORT || 8000}`);
+});
